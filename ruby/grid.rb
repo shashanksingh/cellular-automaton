@@ -1,5 +1,5 @@
 #$ is global variable
-$grid = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+$grid = [[0, 1, 0], [0, 1, 1], [0, 1, 0]]
 
 
 def print_grid(grid)
@@ -41,16 +41,16 @@ def calculate_elementary_cellular_automaton_result(binary_representation)
 		return 0
 	end
 	if binary_representation == [1,0,0]
-		return 0
+		return 1
 	end
 	if binary_representation == [0,1,1]
-		return 0
+		return 1
 	end
 	if binary_representation == [0,1,0]
-		return 0
+		return 1
 	end
 	if binary_representation == [0,0,1]
-		return 0
+		return 1
 	end
 	if binary_representation = [0,0,0]
 		return 0
@@ -76,6 +76,12 @@ end
 puts "input grid"
 print_grid($grid)
 puts "output grid"
-return_grid = calculate_automaton($grid)
-print_grid(return_grid)
-
+generation = 0
+while true
+	return_grid = calculate_automaton($grid)
+	print "Generation =>",generation, "\n"
+	print_grid($grid)
+	puts "\n"
+	generation += 1
+	gets()
+end

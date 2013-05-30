@@ -11,8 +11,21 @@ def print_grid(grid)
 end
 
 
+def find_binary_representation_of_a_cell(grid,x,y)
+	return [1,1,1]
+end
+
+def calculate_elementary_cellular_automaton_result(binary_representation)
+	return 1
+end 
+
 def calculate_automaton(grid)
-	return [[1,1,1]]
+	grid.each do |x|
+		x.each do |y|
+			return_value = find_binary_representation_of_a_cell(grid,x,y)
+			calculate_elementary_cellular_automaton_result(return_value)
+		end
+	end	
 end
 
 

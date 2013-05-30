@@ -13,11 +13,48 @@ end
 
 
 def find_binary_representation_of_a_cell(grid,x,y)
-	return [grid[x][y-1],grid[x][y],grid[x][y+1]]
+	left = grid[x][y-1]
+	current = grid[x][y]
+	right = grid[x][y+1]
+
+	if left == nil
+		left = 0
+	end
+	if right == nil
+		right = 0
+	end
+	if current == nil
+		current = 0
+		puts "WTF why is current nil"
+	end
+	return [left,current,right]
 end
 
 def calculate_elementary_cellular_automaton_result(binary_representation)
-	return 1
+	if binary_representation == [1,1,1]
+		return 0
+	end
+	if binary_representation == [1,1,0]
+		return 0
+	end
+	if binary_representation == [1,0,1]
+		return 0
+	end
+	if binary_representation == [1,0,0]
+		return 0
+	end
+	if binary_representation == [0,1,1]
+		return 0
+	end
+	if binary_representation == [0,1,0]
+		return 0
+	end
+	if binary_representation == [0,0,1]
+		return 0
+	end
+	if binary_representation = [0,0,0]
+		return 0
+	end
 end 
 
 def calculate_automaton(grid)
@@ -26,7 +63,7 @@ def calculate_automaton(grid)
 	grid.each do |x_array|
 		x_array.each do |y_array|
 			return_value = find_binary_representation_of_a_cell(grid,x,y)
-			print x ,",",y, "=>",return_value,"\n"
+			#print x ,",",y, "=>",return_value,"\n"
 			$grid[x][y] = calculate_elementary_cellular_automaton_result(return_value)
 			y += 1
 		end

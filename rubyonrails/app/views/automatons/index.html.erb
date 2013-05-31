@@ -1,0 +1,39 @@
+<h1>Listing automatons</h1>
+
+<table>
+  <tr>
+    <th>Pos00</th>
+    <th>Pos01</th>
+    <th>Pos02</th>
+    <th>Pos10</th>
+    <th>Pos11</th>
+    <th>Pos12</th>
+    <th>Pos20</th>
+    <th>Pos21</th>
+    <th>Pos22</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @automatons.each do |automaton| %>
+  <tr>
+    <td><%= automaton.pos00 %></td>
+    <td><%= automaton.pos01 %></td>
+    <td><%= automaton.pos02 %></td>
+    <td><%= automaton.pos10 %></td>
+    <td><%= automaton.pos11 %></td>
+    <td><%= automaton.pos12 %></td>
+    <td><%= automaton.pos20 %></td>
+    <td><%= automaton.pos21 %></td>
+    <td><%= automaton.pos22 %></td>
+    <td><%= link_to 'Show', automaton %></td>
+    <td><%= link_to 'Edit', edit_automaton_path(automaton) %></td>
+    <td><%= link_to 'Destroy', automaton, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Automaton', new_automaton_path %>

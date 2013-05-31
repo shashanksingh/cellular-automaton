@@ -1,0 +1,53 @@
+<%= form_for(@automaton) do |f| %>
+  <% if @automaton.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@automaton.errors.count, "error") %> prohibited this automaton from being saved:</h2>
+
+      <ul>
+      <% @automaton.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pos00 %><br />
+    <%= f.text_field :pos00 %>
+  </div>
+  <div class="field">
+    <%= f.label :pos01 %><br />
+    <%= f.text_field :pos01 %>
+  </div>
+  <div class="field">
+    <%= f.label :pos02 %><br />
+    <%= f.text_field :pos02 %>
+  </div>
+  <div class="field">
+    <%= f.label :pos10 %><br />
+    <%= f.text_field :pos10 %>
+  </div>
+  <div class="field">
+    <%= f.label :pos11 %><br />
+    <%= f.text_field :pos11 %>
+  </div>
+  <div class="field">
+    <%= f.label :pos12 %><br />
+    <%= f.text_field :pos12 %>
+  </div>
+  <div class="field">
+    <%= f.label :pos20 %><br />
+    <%= f.text_field :pos20 %>
+  </div>
+  <div class="field">
+    <%= f.label :pos21 %><br />
+    <%= f.text_field :pos21 %>
+  </div>
+  <div class="field">
+    <%= f.label :pos22 %><br />
+    <%= f.text_field :pos22 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
